@@ -23,7 +23,7 @@ on:
       - 'v*.*.*'
 jobs:
   docker:
-    runs-on: nicole-test
+    runs-on: buildjet-8vcpu-ubuntu-2204
     steps:
       - uses: actions/checkout@v4
 
