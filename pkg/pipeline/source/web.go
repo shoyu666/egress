@@ -263,6 +263,9 @@ func (s *WebSource) launchChrome(ctx context.Context, p *config.PipelineConfig) 
 		// output
 		chromedp.Env(fmt.Sprintf("PULSE_SINK=%s", p.Info.EgressId)),
 		chromedp.Flag("display", p.Display),
+
+		chromedp.Flag("ignore-certificate-errors", true),
+		chromedp.Flag("mute-audio", false),
 	}
 
 	// custom
