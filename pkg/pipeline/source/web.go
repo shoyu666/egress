@@ -223,8 +223,8 @@ func (s *WebSource) launchChrome(ctx context.Context, p *config.PipelineConfig) 
 		s.chromeLogger = newChromeLogger(os.TempDir())
 	}
 
-	logger.Debugw("launching chrome", "url", webUrl, "sandbox", p.EnableChromeSandbox, "insecure", p.Insecure)
-
+	logger.Infow("launching chrome", "url", webUrl, "sandbox", p.EnableChromeSandbox, "insecure", p.Insecure, "IgnoreCertificateErrors", p.Secure.IgnoreCertificateErrors)
+	println("launching chrome", "url", webUrl, "sandbox", p.EnableChromeSandbox, "insecure", p.Insecure, "IgnoreCertificateErrors", p.Secure.IgnoreCertificateErrors)
 	opts := []chromedp.ExecAllocatorOption{
 		chromedp.NoFirstRun,
 		chromedp.NoDefaultBrowserCheck,
